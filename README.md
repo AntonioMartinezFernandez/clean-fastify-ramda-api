@@ -1,2 +1,2 @@
 # clean-fastify-ramda-api
-Clean rchitecture API using Fastify, Ramda and MongoDB 
+Clean Architecture API using Fastify, Ramda and MongoDB 
