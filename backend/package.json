@@ -1,0 +1,57 @@
+{
+  "name": "clean-fastify-ramda-api",
+  "version": "1.0.0",
+  "description": "Clean Architecture API using Fastify, Ramda and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "build-dev": "tsc",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "build": "tsc --skipLibCheck",
+    "start": "cross-env NODE_ENV=production node ./dist/index.js",
+    "test": "cross-env NODE_ENV=test npx jest --collect-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonioMartinezFernandez/clean-fastify-ramda-api.git"
+  },
+  "keywords": [
+    "clean",
+    "architecture",
+    "api",
+    "fastify",
+    "ramda",
+    "mongodb"
+  ],
+  "author": "Antonio Martínez",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/AntonioMartinezFernandez/clean-fastify-ramda-api/issues"
+  },
+  "homepage": "https://github.com/AntonioMartinezFernandez/clean-fastify-ramda-api#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "fastify": "^3.27.2",
+    "module-alias": "^2.2.2",
+    "ramda": "^0.28.0",
+    "ts-node": "^10.6.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/faker": "^6.6.9",
+    "@types/jest": "^27.4.1",
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^17.0.21",
+    "@types/ramda": "^0.28.0",
+    "@types/uuid": "^8.3.4",
+    "cross-env": "^7.0.3",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.10.0",
+    "faker": "^6.6.6",
+    "jest": "^27.5.1",
+    "pino-pretty": "^7.5.2",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.6.2",
+    "typescript-tslint-plugin": "^1.0.1"
+  }
+}

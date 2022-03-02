@@ -1,0 +1,24 @@
+{
+  "exclude": ["jest.config.ts", "node_modules"],
+  "include": ["./src/**/*"],
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "typeRoots": ["node_modules/@types", "src/@types"],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
