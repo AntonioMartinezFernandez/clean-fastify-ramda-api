@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import Message from './Message'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,9 +15,9 @@ function App() {
             count is: {count}
           </button>
         </p>
-        <p>
-          Clean Fastify Ramda App
-        </p>
+
+        <Message/>
+
       </header>
     </div>
   )

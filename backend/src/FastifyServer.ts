@@ -1,4 +1,6 @@
 import Fastify, { FastifyInstance, FastifyServerOptions } from 'fastify';
+import cors from 'fastify-cors';
+//import { Server } from 'http';
 
 export function setupFastifyServer(
   options?: FastifyServerOptions,
@@ -11,7 +13,7 @@ export function setupFastifyServer(
 
 const setupRoutes = async (server: FastifyInstance): Promise<void> => {
   server.get('/', async (request, reply) => {
-    return { pong: 'Work!' };
+    return { message: 'Message from API' };
   });
 };
 
@@ -19,6 +21,7 @@ export const buildServer = async (
   options?: FastifyServerOptions,
 ): Promise<FastifyInstance> => {
   const server = setupFastifyServer(options);
+  server.register(cors, {});
 
   await setupRoutes(server);
 
