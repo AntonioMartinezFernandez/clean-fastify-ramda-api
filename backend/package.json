@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-dev": "tsc",
-    "dev": "cross-env NODE_ENV=development nodemon",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
     "build": "tsc --skipLibCheck",
     "start": "cross-env NODE_ENV=production node ./dist/index.js",
     "test": "cross-env NODE_ENV=test npx jest --collect-coverage"

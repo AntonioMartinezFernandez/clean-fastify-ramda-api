@@ -1,5 +1,5 @@
-import { rootPath } from '../../../modules/shared/utils/Path';
-import setupEnvironment from '../../../modules/shared/utils/SetupEnvironment';
+import { rootPath } from './Path';
+import setupEnvironment from './SetupEnvironment';
 
 const envFile = `${rootPath}/../.env`;
 

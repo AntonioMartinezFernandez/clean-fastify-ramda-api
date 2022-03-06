@@ -1,6 +1,13 @@
-import Fastify, { FastifyInstance, FastifyServerOptions } from 'fastify';
+import Fastify, {
+  FastifyInstance,
+  FastifyReply,
+  FastifyRequest,
+  FastifyServerOptions,
+} from 'fastify';
+
 import cors from 'fastify-cors';
-//import { Server } from 'http';
+
+import { userServerRoutes } from './modules/user/infrastructure/UserRoutes';
 
 export function setupFastifyServer(
   options?: FastifyServerOptions,
@@ -12,9 +19,11 @@ export function setupFastifyServer(
 }
 
 const setupRoutes = async (server: FastifyInstance): Promise<void> => {
-  server.get('/', async (request, reply) => {
-    return { message: 'Message from API' };
+  server.get('/', (request: FastifyRequest, reply: FastifyReply) => {
+    reply.send({ message: 'Message from API' });
   });
+
+  await server.register(userServerRoutes, { prefix: '/user' });
 };
 
 export const buildServer = async (

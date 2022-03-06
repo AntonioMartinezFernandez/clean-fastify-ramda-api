@@ -4,7 +4,7 @@ Clean Architecture API using Fastify, Ramda and MongoDB
 
 Frontend made with Vite/React
 
-## Installation
+## Deploy
 
 ```
 # clone project

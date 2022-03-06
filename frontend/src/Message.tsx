@@ -1,6 +1,6 @@
 import {Component, useState } from 'react';
 
-class Message extends Component<{}, { data: any, DataisLoaded: any }> {
+class Message extends Component<{}, { data: any, DataisLoaded: boolean }> {
 
     constructor(props: any) {
         super(props);
