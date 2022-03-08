@@ -2,11 +2,11 @@ import moduleAlias from 'module-alias';
 import fs from 'fs';
 
 export default function setupEnvironment(
-  rootPath: string,
+  srcPath: string,
   envFile: string,
 ): void {
   moduleAlias.addAliases({
-    '@': rootPath,
+    '@': srcPath,
   });
 
   if (!fs.existsSync(envFile)) {

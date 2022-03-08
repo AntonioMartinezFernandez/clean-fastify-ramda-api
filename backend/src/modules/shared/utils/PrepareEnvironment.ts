@@ -1,6 +1,6 @@
-import { rootPath } from './Path';
+import { srcPath } from './Path';
 import setupEnvironment from './SetupEnvironment';
 
-const envFile = `${rootPath}/../.env`;
+const envFile = `${srcPath}/../.env`;
 
-setupEnvironment(rootPath, envFile);
+setupEnvironment(srcPath, envFile);

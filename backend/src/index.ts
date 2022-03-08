@@ -4,7 +4,6 @@ import { isDevelopment } from '@/modules/shared/utils/Environment';
 import { handleFatalError } from '@/modules/shared/utils/Error';
 import { FastifyInstance } from 'fastify';
 import { buildServer } from '@/FastifyServer';
-
 import dotEnv from 'dotenv';
 dotEnv.config();
 
