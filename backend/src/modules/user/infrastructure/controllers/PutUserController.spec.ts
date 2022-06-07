@@ -5,7 +5,8 @@ import {
 import { FastifyReply, FastifyRequest } from 'fastify';
 
 let putUserController: ReturnType<typeof PutUserControllerFactory>;
-let replyStatusSpy = jest.fn();
+let replyStatusSpy = jest.fn().mockReturnThis();
+let replySendSpy = jest.fn();
 let createUserSpy = jest.fn();
 
 beforeEach(() => {
@@ -20,7 +21,8 @@ async function callPutUserController(
       body,
     } as FastifyRequest,
     {
-      status: replyStatusSpy,
+      status: replyStatusSpy.mockReturnThis(),
+      send: replySendSpy,
     } as unknown as FastifyReply,
   );
 }
@@ -32,5 +34,5 @@ it('"replyStatusSpy" should be called', async () => {
 
 it('"replyStatusSpy" should be called with status code"204"', async () => {
   await callPutUserController({});
-  expect(replyStatusSpy).toBeCalledWith(204);
+  expect(replyStatusSpy).toBeCalledWith(201);
 });
