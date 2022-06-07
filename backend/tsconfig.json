@@ -14,6 +14,7 @@
     "paths": {
       "@/*": ["./src/*"]
     }
+    //"typeRoots": ["./@types"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
