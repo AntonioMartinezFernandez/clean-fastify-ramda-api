@@ -13,6 +13,6 @@ buildServer({
   },
 })
   .then((server: FastifyInstance) => {
-    server.listen(getPortOrFail());
+    server.listen(getPortOrFail(), '0.0.0.0');
   })
   .catch(handleFatalError);

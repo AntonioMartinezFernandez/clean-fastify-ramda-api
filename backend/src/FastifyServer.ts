@@ -8,8 +8,11 @@ import cors from 'fastify-cors';
 
 import { userRoutes } from './modules/user/infrastructure/UserRoutes';
 
-const serverPlugins = async (server: FastifyInstance): Promise<void> => {
-  server.register(cors);
+const serverPlugins = async (server: FastifyInstance) => {
+  await server.register(cors, {
+    origin: '*',
+    //methods: ['POST', 'GET'],
+  });
 };
 
 const setupRoutes = async (server: FastifyInstance): Promise<void> => {
