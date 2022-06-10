@@ -6,9 +6,9 @@ export type CreateUser = (userOptions: User) => Promise<User | null>;
 
 export async function PutUserController(
   createUser: CreateUser,
-  { user, reply }: { user: User; reply: FastifyReply },
+  { request, reply }: { request: FastifyRequest; reply: FastifyReply },
 ): Promise<void> {
-  const userCreated = await createUser(user ?? {});
+  const userCreated = await createUser(request.json ?? {});
   console.log(userCreated);
   reply.status(201).send('OK');
 }
@@ -23,7 +23,7 @@ export function PutUserControllerFactory(
     request: FastifyRequest,
     reply: FastifyReply,
   ): ReturnType<typeof PutUserController> {
-    const user = requestBodyParser(request.body);
-    return PutUserController(createUser, { user, reply });
+    request.json = requestBodyParser(request.body);
+    return PutUserController(createUser, { request, reply });
   };
 }
